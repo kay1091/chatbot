@@ -1,0 +1,53 @@
+# Opportunity Data Consolidator - Setup and Usage Instructions
+
+This application allows you to upload Salesforce and Frontend opportunity data from Excel files and view a consolidated, sorted list.
+
+## Prerequisites
+
+1.  **Node.js:** You need Node.js installed on your system. Version 14.x or higher is recommended. You can download it from [https://nodejs.org/](https://nodejs.org/). Verify your installation by opening a terminal or command prompt and running:
+    ```
+    node -v
+    npm -v
+    ```
+2.  **Excel Files:** Prepare your Salesforce and Frontend data in separate `.xlsx` files. Ensure the columns match those expected by the application (specifically the SFID columns: 'Opportunity ID' for Salesforce, 'SFID' for Frontend).
+
+## Setup
+
+1.  **Navigate to Project Directory:** Open your terminal or command prompt and navigate to the directory containing this `INSTRUCTIONS.txt` file and the `frontend-app` folder.
+    ```bash
+    cd /path/to/karthilk-sfdc 
+    ```
+    (Replace `/path/to/karthilk-sfdc` with the actual path on your system)
+
+2.  **Install Dependencies:** Navigate into the `frontend-app` directory and install the required Node.js packages.
+    ```bash
+    cd frontend-app
+    npm install
+    ```
+    This might take a few minutes.
+
+## Running the Application
+
+1.  **Start the Development Server:** While inside the `frontend-app` directory, run the start command:
+    ```bash
+    npm start
+    ```
+2.  **Access the App:** This will usually open the application automatically in your default web browser at `http://localhost:3000`. If not, open your browser and navigate to that address.
+
+## Usage
+
+1.  **Upload Files:**
+    *   Click the "Upload Salesforce Data" tab and use the file input to select your Salesforce `.xlsx` file.
+    *   Click the "Upload Frontend Data" tab and use the file input to select your Frontend `.xlsx` file.
+    *   You will see confirmation messages once the files are processed.
+2.  **View Consolidated Data:**
+    *   Click the "Consolidated View" tab.
+    *   The table will display all rows from both uploaded files, sorted by the most relevant date found ('Close Date', 'Created Date', or 'Due Date') in descending order (newest first).
+3.  **Download Data:**
+    *   On the "Consolidated View" tab, click the "Download Consolidated View" button to download the displayed data as an `.xlsx` file.
+4.  **Clear Data:**
+    *   On the "Consolidated View" tab, click the "Clear All Data" button to remove all uploaded data from the application's memory (you will need to re-upload files).
+
+## Stopping the Application
+
+*   Go back to the terminal where `npm start` is running and press `Ctrl + C`.
